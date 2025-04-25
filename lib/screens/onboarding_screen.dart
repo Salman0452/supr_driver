@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:supr_driver/app/app_theme.dart';
 import 'package:supr_driver/app/routes.dart';
@@ -18,13 +17,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   final List<OnboardingPage> _pages = [
     OnboardingPage(
-      description: 'Become the mobile seller and sell to wider customer in comfort.',
+      description: 'Become the mobile driver and deliver to wider customer in comfort.',
       imagePath: 'assets/images/onboard-img-1.png',
       isSvg: true,
       word: 'Supr',
     ),
     OnboardingPage(
-      description: 'Your Store, your way. Set up your store and start selling with Supr.',
+      description: 'Your vehicle, your way. Set up your account and start delivering with Supr.',
       imagePath: 'assets/images/onboard-img-2.png',
       isSvg: false,
       word: 'Supr',
@@ -56,11 +55,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   void _navigateToRegister() {
-    // Get.offNamed(Routes.registerScreen);
+    Get.offNamed(Routes.registerScreen);
   }
 
   void _navigateToLogin() {
-    // Get.offNamed(Routes.loginScreen);
+    Get.offNamed(Routes.loginScreen);
   }
 
   @override
