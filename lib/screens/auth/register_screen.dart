@@ -23,18 +23,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   void _onSubmitted(BuildContext context) {
     if (_formKey.currentState!.validate()) {
-      // Navigate to password setup screen with category information
-      // Get.toNamed(
-      //   Routes.passwordRegisterScreen,
-      //   arguments: {
-      //     'category': _category,
-      //     'fullName': _usernameController.text,
-      //     'email': _emailController.text,
-      //     'phone': _phoneController.text,
-      //     'storeName': _storeNameController.text,
-      //     'storeAddress': _storeAddressController.text,
-      //   }
-      // );
+      //Navigate to password setup screen with category information
+      Get.toNamed(
+        Routes.passwordRegisterScreen,
+        arguments: {
+          'category': _category,
+          'fullName': _usernameController.text,
+          'email': _emailController.text,
+          'phone': _phoneController.text,
+          'storeName': _storeNameController.text,
+          'storeAddress': _storeAddressController.text,
+        }
+      );
     }
   }
 

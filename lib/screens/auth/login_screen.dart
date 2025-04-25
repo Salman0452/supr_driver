@@ -196,7 +196,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: TextButton(
                       onPressed: () {
                         // Navigate to forgot password screen
-                        // Get.toNamed(Routes.forgotPasswordScreen);
+                        Get.toNamed(Routes.forgotPasswordScreen);
                       },
                       child: Text(
                         'Forgot Password?',
