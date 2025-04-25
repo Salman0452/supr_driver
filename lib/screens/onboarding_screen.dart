@@ -19,13 +19,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final List<OnboardingPage> _pages = [
     OnboardingPage(
       description: 'Become the mobile seller and sell to wider customer in comfort.',
-      imagePath: 'assets/images/svgs/onboard-img-1.svg',
+      imagePath: 'assets/images/onboard-img-1.png',
       isSvg: true,
       word: 'Supr',
     ),
     OnboardingPage(
       description: 'Your Store, your way. Set up your store and start selling with Supr.',
-      imagePath: 'assets/images/onboard-img-2.jpeg',
+      imagePath: 'assets/images/onboard-img-2.png',
       isSvg: false,
       word: 'Supr',
     ),
@@ -154,18 +154,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         // Image below skip button (not centered)
         Padding(
           padding: const EdgeInsets.only(top: 30.0, bottom: 30.0),
-          child: page.isSvg
-              ? SvgPicture.asset(
-                  page.imagePath,
-                  width: double.infinity,
-                  height: 300,
-                )
-              : Image.asset(
-                  page.imagePath,
-                  width: double.infinity,
-                  height: 300,
-                  fit: BoxFit.cover,
-                ),
+          child: Image.asset(
+            page.imagePath,
+            width: double.infinity,
+            height: 280,
+            fit: BoxFit.cover,
+          ),
         ),
 
         // Description below image
