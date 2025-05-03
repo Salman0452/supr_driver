@@ -17,23 +17,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _usernameController = TextEditingController();
   final _emailController = TextEditingController();
   final _phoneController = TextEditingController();
-  final _storeNameController = TextEditingController();
-  final _storeAddressController = TextEditingController();
-  String? _category = 'Food and Beverage';
 
   void _onSubmitted(BuildContext context) {
     if (_formKey.currentState!.validate()) {
       //Navigate to password setup screen with category information
       Get.toNamed(
         Routes.passwordRegisterScreen,
-        arguments: {
-          'category': _category,
-          'fullName': _usernameController.text,
-          'email': _emailController.text,
-          'phone': _phoneController.text,
-          'storeName': _storeNameController.text,
-          'storeAddress': _storeAddressController.text,
-        }
       );
     }
   }
@@ -194,149 +183,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     }
                     if (value.length != 10) {
                       return 'Phone number must be 10 digits';
-                    }
-                    return null;
-                  },
-                ),
-                
-                const SizedBox(height: 20),
-                Text(
-                  'Category',
-                  style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400,
-                    color: isDarkMode ? AppColors.lightSecondaryColor : AppColors.SecondaryColor,
-                  ),
-                ),
-                const SizedBox(height: 5),
-                Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    // border: Border.all(color: const Color(0xFF898483)),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: DropdownButtonHideUnderline(
-                    child: DropdownButtonFormField<String>(
-                      value: _category,
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.category_outlined),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: const BorderSide(color: Color(0xFF898483)),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: const BorderSide(color: Color(0xFF898483)),
-                        ),
-                        contentPadding: EdgeInsets.all(15),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide(color: isDarkMode ? AppColors.PrimaryColor : AppColors.SecondaryColor),
-                        ),
-                      ),
-                      items: [
-                        'Food and Beverage',
-                        'Grocery',
-                        'Pharmacy and Health',
-                        'Electronics'
-                        'Transportation',
-                        'Dining and Entertainment',
-                        'Home Services',
-                        'Delivery Partner'
-                      ].map((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
-                      onChanged: (value) {
-                        setState(() {
-                          _category = value;
-                        });
-                      },
-                      validator: (value) {
-                        if (value == null) {
-                          return 'Please select a category';
-                        }
-                        return null;
-                      },
-                    ),
-                  ),
-                ),
-                
-                const SizedBox(height: 20),
-                Text(
-                  'Store name',
-                  style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400,
-                    color: isDarkMode ? AppColors.lightSecondaryColor : AppColors.SecondaryColor,
-                  ),
-                ),
-                const SizedBox(height: 5),
-                TextFormField(
-                  controller: _storeNameController,
-                  decoration: InputDecoration(
-                    hintText: 'Enter your store name',
-                    prefixIcon: const Icon(Icons.store_outlined),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Color(0xFF898483)),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Color(0xFF898483)),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: isDarkMode ? AppColors.PrimaryColor : AppColors.SecondaryColor),
-                    ),
-                    contentPadding: const EdgeInsets.all(15),
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter your store name';
-                    }
-                    return null;
-                  },
-                ),
-                
-                const SizedBox(height: 20),
-                Text(
-                  'Store address',
-                  style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400,
-                    color: isDarkMode ? AppColors.lightSecondaryColor : AppColors.SecondaryColor,
-                  ),
-                ),
-                const SizedBox(height: 5),
-                TextFormField(
-                  controller: _storeAddressController,
-                  // maxLines: 3,
-                  decoration: InputDecoration(
-                    hintText: 'Enter your store address',
-                    prefixIcon: Icon(Icons.location_on_outlined),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Color(0xFF898483)),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Color(0xFF898483)),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: isDarkMode ? AppColors.PrimaryColor : AppColors.SecondaryColor),
-                    ),
-                    contentPadding: const EdgeInsets.all(15),
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter your store address';
                     }
                     return null;
                   },

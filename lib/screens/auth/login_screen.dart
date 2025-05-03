@@ -24,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
       // Perform login logic here
       print('Phone: ${_phoneController.text}, Password: ${_passwordController.text}');
       // Navigate to phone verification screen after successful login
-      // Get.toNamed(Routes.phoneVerificationScreen);
+      Get.toNamed(Routes.bottomNavScreen);
     }
   }
 

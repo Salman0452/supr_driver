@@ -34,21 +34,9 @@ class _PasswordRegisterScreenState extends State<PasswordRegisterScreen> {
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: AppColors.PrimaryColor,
         colorText: Colors.black,
-        duration: const Duration(seconds: 3),
+        duration: const Duration(seconds: 2),
       );
-      Get.offAllNamed(Routes.loginScreen);
-      
-      // Check if user is from Transportation category
-      // if (_category == 'Transportation') {
-      //   // Navigate to transportation documents screen
-      //   Get.offNamed(Routes.transportationDocumentScreen);
-      // } if(_category == 'Dining and Entertainment') {
-      //   Get.offNamed(Routes.homeServicesDocumentScreen);
-      // }
-      // else {
-      //   // For other categories, navigate to login screen
-      //   Get.offAllNamed(Routes.loginScreen);
-      // }
+      Get.offAllNamed(Routes.vehicleInfo);
     }
   }
 
@@ -319,7 +307,7 @@ class _PasswordRegisterScreenState extends State<PasswordRegisterScreen> {
                             TextSpan(
                               text: 'Sign in',
                               style: TextStyle(
-                                color: AppColors.PrimaryColor,
+                                color: isDarkMode ? AppColors.PrimaryColor : AppColors.SecondaryColor,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
